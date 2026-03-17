@@ -1,6 +1,6 @@
 # 📊 Crypto & Gold Dashboard
 
-Dự án tự động cập nhật giá Bitcoin và Vàng mỗi ngày qua GitHub Actions.
+**Dự án tự động cập nhật giá Bitcoin và Vàng mỗi ngày qua GitHub Actions.**
 
 <!-- PRICE_START -->
 ## 📊 Giá hôm nay — 2026-03-17
