@@ -5,7 +5,7 @@ Dự án tự động cập nhật giá Bitcoin và Vàng mỗi ngày qua GitHub
 <!-- PRICE_START -->
 ## 📊 Giá hôm nay — 2026-03-17
 
-> ⏱️ Tự động cập nhật lúc **2026-03-17 13:10 UTC** bởi [GitHub Actions](.github/workflows/update.yml)
+> ⏱️ Tự động cập nhật lúc **13:10 UTC** bởi [GitHub Actions](.github/workflows/update.yml)
 
 ### ₿ Bitcoin
 
