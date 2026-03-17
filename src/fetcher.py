@@ -113,6 +113,17 @@ def fetch_all() -> dict:
         "date": datetime.now(timezone.utc).strftime("%Y-%m-%d"),
     }
 
+GOLD_FALLBACK = "https://api.coinbase.com/v2/prices/XAU-USD/spot"
+
+def fetch_gold():
+    try:
+        # ... metals.live như cũ
+    except Exception:
+        logger.warning("⚠️ metals.live lỗi, thử fallback Coinbase...")
+        resp = requests.get(GOLD_FALLBACK, timeout=TIMEOUT)
+        price = float(resp.json()["data"]["amount"])
+        # tiếp tục xử lý...
+
 
 if __name__ == "__main__":
     import json
