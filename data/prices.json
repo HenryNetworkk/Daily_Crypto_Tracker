@@ -6,14 +6,14 @@
   "records": [
     {
       "date": "2026-03-17",
-      "btc_usd": 73719,
-      "btc_change_24h": -0.24,
-      "btc_market_cap": 1475413933803.5024,
-      "btc_volume_24h": 56251085783.54577,
-      "gold_usd_oz": 5009.21,
-      "gold_usd_gram": 161.05,
-      "gold_vnd_gram": 4219439,
-      "fetched_at": "2026-03-17T13:27:21Z"
+      "btc_usd": 73852,
+      "btc_change_24h": -0.41,
+      "btc_market_cap": 1474407494702.1738,
+      "btc_volume_24h": 56931564649.75426,
+      "gold_usd_oz": 5009.47,
+      "gold_usd_gram": 161.06,
+      "gold_vnd_gram": 4219701,
+      "fetched_at": "2026-03-17T13:34:31Z"
     }
   ]
 }
