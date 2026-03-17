@@ -1,5 +1,6 @@
 """
 fetcher.py — Lấy giá Bitcoin, Vàng, tỷ giá USD/VNĐ.
+Tất cả dùng CoinGecko — free, không cần API key.
 """
 
 import requests
@@ -10,11 +11,9 @@ from typing import Optional
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 logger = logging.getLogger(__name__)
 
-COINGECKO_URL  = "https://api.coingecko.com/api/v3/simple/price"
-METALS_URL     = "https://api.metals.live/v1/spot"
-GOLD_FALLBACK  = "https://api.frankfurter.app/latest?from=XAU&to=USD"
-EXCHANGE_URL   = "https://api.exchangerate-api.com/v4/latest/USD"
-TIMEOUT        = 15
+COINGECKO_URL = "https://api.coingecko.com/api/v3/simple/price"
+EXCHANGE_URL  = "https://api.exchangerate-api.com/v4/latest/USD"
+TIMEOUT       = 15
 
 
 def fetch_usd_vnd() -> float:
@@ -25,8 +24,8 @@ def fetch_usd_vnd() -> float:
         logger.info(f"💱 Tỷ giá: 1 USD = {rate:,.0f} VNĐ")
         return rate
     except Exception as e:
-        logger.warning(f"⚠️ Không lấy được tỷ giá ({e}), dùng mặc định 25,000")
-        return 25_000.0
+        logger.warning(f"⚠️ Không lấy được tỷ giá ({e}), dùng mặc định 26,000")
+        return 26_000.0
 
 
 def fetch_bitcoin() -> Optional[dict]:
@@ -55,41 +54,34 @@ def fetch_bitcoin() -> Optional[dict]:
         return None
 
 
-def _parse_gold(price_oz: float, usd_vnd: float) -> dict:
-    price_gram = round(price_oz / 31.1035, 2)
-    return {
-        "price_usd_oz"  : round(price_oz, 2),
-        "price_usd_gram": price_gram,
-        "price_vnd_gram": int(price_gram * usd_vnd),
-        "fetched_at"    : datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
-    }
-
-
 def fetch_gold(usd_vnd: float) -> Optional[dict]:
-    # Thử nguồn chính
+    """
+    Dùng PAXG (Pax Gold) từ CoinGecko — token vàng thật, giá bám 1:1 với XAU/USD.
+    Cùng nguồn với Bitcoin nên không bao giờ lỗi riêng.
+    """
     try:
-        resp = requests.get(METALS_URL, timeout=TIMEOUT)
+        params = {
+            "ids": "pax-gold",
+            "vs_currencies": "usd",
+            "include_24hr_change": "true",
+        }
+        resp = requests.get(COINGECKO_URL, params=params, timeout=TIMEOUT)
         resp.raise_for_status()
-        for item in resp.json():
-            if "gold" in item:
-                price_oz = float(item["gold"])
-                result = _parse_gold(price_oz, usd_vnd)
-                logger.info(f"✅ Vàng: ${price_oz:,.2f}/oz | {result['price_vnd_gram']:,} VNĐ/g")
-                return result
-        raise ValueError("Không tìm thấy key gold")
-    except Exception as e:
-        logger.warning(f"⚠️ metals.live lỗi ({e}), thử fallback...")
+        data = resp.json()["pax-gold"]
 
-    # Fallback ECB
-    try:
-        resp = requests.get(GOLD_FALLBACK, timeout=TIMEOUT)
-        resp.raise_for_status()
-        price_oz = float(resp.json()["rates"]["USD"])
-        result = _parse_gold(price_oz, usd_vnd)
-        logger.info(f"✅ Vàng (fallback): ${price_oz:,.2f}/oz")
+        price_oz   = round(data["usd"], 2)          # giá 1 troy oz
+        price_gram = round(price_oz / 31.1035, 2)   # 1 troy oz = 31.1035g
+
+        result = {
+            "price_usd_oz"  : price_oz,
+            "price_usd_gram": price_gram,
+            "price_vnd_gram": int(price_gram * usd_vnd),
+            "fetched_at"    : datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+        }
+        logger.info(f"✅ Vàng (PAXG): ${price_oz:,.2f}/oz | {result['price_vnd_gram']:,} VNĐ/g")
         return result
     except Exception as e:
-        logger.error(f"❌ Cả 2 nguồn vàng đều lỗi: {e}")
+        logger.error(f"❌ Lỗi fetch Gold: {e}")
         return None
 
 
