@@ -94,7 +94,7 @@ def generate_chart(n_days: int = 30):
     ax1 = fig.add_subplot(2, 1, 1)
     ax2 = fig.add_subplot(2, 1, 2)
 
-    fig.text(0.04, 0.95, "Bitcoin  &  Gold  —  30-day tracker",
+    fig.text(0.04, 0.95, "                  Bitcoin  &  Gold  —  30-day tracker",
              color=TEXT_MAIN, fontsize=13, fontweight="bold", va="top")
     fig.text(0.04, 0.91,
              f"Cap nhat: {latest_date}  |  BTC ${latest_btc:,.0f}  |  Gold ${latest_gold:,.0f}/oz",
