@@ -1,11 +1,3 @@
-
-"""
-updater.py — Ghi README.md mới dựa trên data mới nhất.
-Tìm cặp tag <!-- PRICE_START --> / <!-- PRICE_END --> trong README
-và thay thế nội dung bên trong bằng bảng giá cập nhật.
-Cách này an toàn: phần còn lại của README không bị đụng chạm.
-"""
-
 import logging
 import re
 from pathlib import Path
