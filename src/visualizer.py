@@ -90,15 +90,10 @@ def generate_chart(n_days: int = 30):
     latest_date = records[-1]["date"]
 
     fig = plt.figure(figsize=(10, 6), facecolor=BG_DARK)
-    fig.subplots_adjust(left=0.04, right=0.88, top=0.78, bottom=0.1, hspace=0.35)
+    fig.subplots_adjust(left=0.04, right=0.98, top=0.88, bottom=0.1, hspace=0.35)
     ax1 = fig.add_subplot(2, 1, 1)
     ax2 = fig.add_subplot(2, 1, 2)
 
-    fig.text(0.04, 0.95, "                  Bitcoin  &  Gold  —  30-day tracker",
-             color=TEXT_MAIN, fontsize=13, fontweight="bold", va="top")
-    fig.text(0.04, 0.91,
-             f"Cap nhat: {latest_date}  |  BTC ${latest_btc:,.0f}  |  Gold ${latest_gold:,.0f}/oz",
-             color=TEXT_DIM, fontsize=8.5, va="top")
 
     _add_area(ax1, dates, btc_vals, BTC_COLOR)
     _style_axis(ax1, "USD")
