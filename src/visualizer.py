@@ -87,8 +87,8 @@ def generate_chart(n_days: int = 30) -> Path:
     from processor import get_last_n_days
     records = get_last_n_days(n_days)
 
-    if len(records) < 2:
-        logger.warning("⚠️  Chưa đủ dữ liệu để vẽ chart (cần ≥ 2 ngày).")
+if len(records) < 1:
+        logger.warning("⚠️  Chưa đủ dữ liệu để vẽ chart (cần ≥ 1 ngày).")
         return None
 
     ASSETS_DIR.mkdir(parents=True, exist_ok=True)
