@@ -90,7 +90,7 @@ def generate_chart(n_days: int = 30):
     latest_date = records[-1]["date"]
 
     fig = plt.figure(figsize=(10, 6), facecolor=BG_DARK)
-    fig.subplots_adjust(left=0.04, right=0.88, top=0.88, bottom=0.1, hspace=0.35)
+    fig.subplots_adjust(left=0.04, right=0.88, top=0.78, bottom=0.1, hspace=0.35)
     ax1 = fig.add_subplot(2, 1, 1)
     ax2 = fig.add_subplot(2, 1, 2)
 
