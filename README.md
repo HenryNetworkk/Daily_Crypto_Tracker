@@ -3,34 +3,34 @@
 **Dự án tự động cập nhật giá Bitcoin và Vàng mỗi ngày qua GitHub Actions.**
 
 <!-- PRICE_START -->
-## 📊 Giá hôm nay — 2026-03-17
+## 📊 Giá hôm nay — 2026-03-18
 
-> ⏱️ Tự động cập nhật lúc **2026-03-17 13:49 UTC** bởi [GitHub Actions](.github/workflows/update.yml)
+> ⏱️ Tự động cập nhật lúc **2026-03-18 03:35 UTC** bởi [GitHub Actions](.github/workflows/update.yml)
 
 ### ₿ Bitcoin
 
 | | Giá trị |
 |---|---|
-| 💰 Giá hiện tại | **$73,833.00** |
-| 🔴 ▼ Thay đổi 24h | `-0.60%` |
-| 📦 Market Cap | $1.48T |
-| 🔄 Volume 24h | $56.44B |
+| 💰 Giá hiện tại | **$74,538.00** |
+| 🔴 ▼ Thay đổi 24h | `-0.43%` |
+| 📦 Market Cap | $1.49T |
+| 🔄 Volume 24h | $42.79B |
 
 ### 🥇 Vàng (XAU)
 
 | | Giá trị |
 |---|---|
-| 💰 Giá / troy oz | **$5,017.85** |
-| ⚖️ Giá / gram | $161.33 |
-| 🇻🇳 Giá / gram (VNĐ) | 4,226,775 ₫ |
+| 💰 Giá / troy oz | **$4,989.73** |
+| ⚖️ Giá / gram | $160.42 |
+| 🇻🇳 Giá / gram (VNĐ) | 4,201,802 ₫ |
 
-### 📈 Thống kê ? ngày qua
+### 📈 Thống kê 2 ngày qua
 
 | | Bitcoin | Vàng |
 |---|---|---|
-| 🔺 Cao nhất | $0 | $0/oz |
-| 🔻 Thấp nhất | $0 | $0/oz |
-| 📈 Thay đổi | `0.0%` | `+0.0%` |
+| 🔺 Cao nhất | $74,538 | $5,018/oz |
+| 🔻 Thấp nhất | $73,833 | $4,990/oz |
+| 📉 Thay đổi | `0.9%` | `-0.6%` |
 
 ### 📉 Biểu đồ 30 ngày
 
