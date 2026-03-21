@@ -1,10 +1,3 @@
-
-"""
-main.py — Điểm vào duy nhất.
-Gọi đúng thứ tự: fetch → process → visualize → update README.
-Mỗi bước thất bại thì log lỗi và dừng, không chạy tiếp bước sau.
-"""
-
 import logging
 import sys
 from pathlib import Path
