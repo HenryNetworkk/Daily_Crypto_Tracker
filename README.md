@@ -1,7 +1,7 @@
 # 📊 Crypto & Gold Dashboard
 
 **Dự án tự động cập nhật giá Bitcoin và Vàng mỗi ngày qua GitHub Actions.**
-**Tự động gửi giá theo từng ngày qua bot t.me/@NeuroxChain_bot**
+**Tự động gửi giá theo từng ngày qua t.me/@NeuroxChain_bot**
 <!-- PRICE_START -->
 ## 📊 Giá hôm nay — 2026-03-20
 
