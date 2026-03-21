@@ -50,14 +50,14 @@
     },
     {
       "date": "2026-03-21",
-      "btc_usd": 70620,
-      "btc_change_24h": 0.18,
-      "btc_market_cap": 1412807018097.8286,
-      "btc_volume_24h": 37321096529.04067,
-      "gold_usd_oz": 4526.06,
-      "gold_usd_gram": 145.52,
-      "gold_vnd_gram": 3802127,
-      "fetched_at": "2026-03-21T01:39:59Z"
+      "btc_usd": 70740,
+      "btc_change_24h": 0.4,
+      "btc_market_cap": 1414570336471.163,
+      "btc_volume_24h": 37178240103.80822,
+      "gold_usd_oz": 4517.13,
+      "gold_usd_gram": 145.23,
+      "gold_vnd_gram": 3794550,
+      "fetched_at": "2026-03-21T03:14:28Z"
     }
   ]
 }
