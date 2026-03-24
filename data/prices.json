@@ -80,6 +80,17 @@
       "gold_usd_gram": 140.3,
       "gold_vnd_gram": 3671488,
       "fetched_at": "2026-03-23T03:39:19Z"
+    },
+    {
+      "date": "2026-03-24",
+      "btc_usd": 70523,
+      "btc_change_24h": 3.43,
+      "btc_market_cap": 1410635442230.518,
+      "btc_volume_24h": 51652018515.88558,
+      "gold_usd_oz": 4370.86,
+      "gold_usd_gram": 140.53,
+      "gold_vnd_gram": 3692550,
+      "fetched_at": "2026-03-24T03:30:07Z"
     }
   ]
 }
